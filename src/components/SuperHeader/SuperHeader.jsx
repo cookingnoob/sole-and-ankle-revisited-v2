@@ -1,8 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-
-import { COLORS } from '../../constants';
-
+import { COLORS, BREAKPOINTS } from '../../constants';
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
@@ -32,11 +29,16 @@ const Wrapper = styled.div`
   height: 40px;
   padding-left: 32px;
   padding-right: 32px;
-`;
+  @media(max-width: ${BREAKPOINTS.tablet}rem){
+    display: none;
+  }
+ 
+`; 
 
 const MarketingMessage = styled.span`
   color: ${COLORS.white};
   margin-right: auto;
+
 `;
 
 const HelpLink = styled.a`
@@ -47,6 +49,7 @@ const HelpLink = styled.a`
   &:not(:focus-visible) {
     outline: none;
   }
+ 
 `;
 
 export default SuperHeader;
